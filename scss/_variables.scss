@@ -1,0 +1,31 @@
+// Typography
+$main-font: 'Montserrat', sans-serif !important;
+$headline-font: 'pressio';
+
+// Colors
+$bg-color: #0d0d0d;
+$card-bg: #1a1a1a;
+$text-color: #f0f0f0;
+$accent-color: #ff0055;
+$secondary-accent: #ffffff;
+
+// Layout
+$max-width: 1200px;
+$container-padding: 2rem;
+
+// Borders & Shadows
+$border-radius: 12px;
+$box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+
+// Spacing
+$gap-small: 0.5rem;
+$gap-medium: 1rem;
+$gap-large: 2rem;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-smooth: 0.4s ease;
+
+// // Z-index
+// $z-header: 1000;
+// $z-overlay: 2000;

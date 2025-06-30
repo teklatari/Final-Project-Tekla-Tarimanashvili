@@ -1,0 +1,954 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+// BASE
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: black;
+  font-family: $main-font;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  transition: $transition-smooth;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+// TYPOGRAPHY
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headline-font;
+  color: $accent-color;
+}
+
+.container {
+  max-width: $max-width;
+  padding: 0 $container-padding;
+  margin: 0 auto;
+}
+
+// NAVBAR
+.header {
+  background-color: $card-bg;
+  padding: $gap-medium 0;
+  position: sticky;
+  top: 0;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $gap-large;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+      gap: $gap-medium;
+    }
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  li {
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .header-logo {
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  ul {
+    display: none;
+  }
+}
+
+// ABOUT SECTION
+.about {
+  .section {
+    padding: $gap-large 0;
+    text-align: center;
+
+    h1 {
+      margin-bottom: $gap-medium;
+      font-size: 2.5rem;
+    }
+
+    p {
+      margin-bottom: $gap-medium;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// text-intro
+.intro {
+    margin: 1rem 0rem;
+
+    .container {
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            font-family: $headline-font;
+            margin-top: 2.5rem;
+            @include header-font;
+            margin-bottom: 1rem;
+
+            @media (max-width: 480px) {
+                font-size: 1.6rem;
+                margin-top: 1rem;
+            }
+        }
+
+        .text-intro-p {
+            font-size: 1.25rem;
+            font-family: $main-font;
+            color: rgb(166, 166, 166);
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 0.2rem;
+            line-height: 1.4rem;
+
+            @media (max-width: 480px) {
+                font-size: 1rem;
+                margin-top: 4px;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+// members
+.band-members {
+  padding: $gap-large 0;
+  text-align: center;
+
+  h2 {
+    font-family: $headline-font;
+    font-size: 2.5rem;
+    color: $accent-color;
+    margin-bottom: $gap-large;
+  }
+
+  .member-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap-large;
+    justify-items: stretch;
+    max-width: 100%; 
+    width: 100%;
+    padding: 0 4rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .member {
+    background-color: $card-bg;
+    width: 100%;
+    padding: $gap-medium;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 0, 85, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    max-width: none;
+
+    @media (max-width: 480px) {
+      padding: 1.5rem;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(255, 0, 85, 0.3);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: $gap-small;
+      object-fit: cover;
+      height: 370px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-family: $headline-font;
+      color: $accent-color;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-family: $main-font;
+      font-size: 0.95rem;
+      color: $text-color;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+
+// albums section 
+.albums {
+  padding: 4rem 1rem;
+  background: $bg-color;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-family: $headline-font;
+    color: $accent-color;
+  }
+
+  .album-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .album-card {
+    display: flex;
+    flex-direction: column;
+    background: $card-bg;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    transition: 0.4s ease;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-width: 300px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .album-info {
+      padding: 2rem;
+
+      h3 {
+        font-family: $headline-font;
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+        color: $accent-color;
+
+        .year {
+          font-size: 0.9rem;
+          color: lighten($text-color, 30%);
+          margin-left: 0.5rem;
+        }
+      }
+
+      .tags {
+        font-size: 0.9rem;
+        color: $secondary-accent;
+        margin-bottom: 1rem;
+        font-family: $main-font;
+      }
+
+      .description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: lighten($text-color, 10%);
+        font-family: $main-font;
+        line-height: 1.2;
+      }
+
+      .album-actions {
+        display: flex;
+        gap: 1rem;
+
+        .button {
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          background-color: $accent-color;
+          color: white;
+          transition: 0.3s;
+          font-family: $main-font;
+
+          &:hover {
+            background-color: $secondary-accent;
+            color: $accent-color;
+          }
+
+          &.ghost {
+            background: transparent;
+            border: 1px solid $accent-color;
+            color: $accent-color;
+
+            &:hover {
+              background: $accent-color;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// merch 
+.music-merch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .track-card {
+    background: $card-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: $text-color;
+
+    h3 {
+      font-family: $headline-font;
+      color: $accent-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-family: $main-font;
+      margin-bottom: 1rem;
+    }
+
+    .merch-tie {
+      img {
+        width: 80%;
+        max-width: 200px;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+      }
+
+      a.button {
+        margin-top: 1rem;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// banner
+.about-banner {
+  position: relative;
+  height: 50vh;
+  background: url('../../images/IMG_1180.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 3.5rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: fadeUp 1.2s ease-out forwards;
+      @include header-font;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.3rem;
+        margin-bottom: 0.1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-family: $main-font;
+      color: lighten($text-color, 20%);
+      margin-bottom: 2rem;
+      animation: fadeUp 1.5s ease-out forwards;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background: $card-bg;
+  color: $text-color;
+  padding: $gap-large;
+  font-size: 0.9rem;
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 5rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  h3 {
+    color: $accent-color;
+    font-family: $main-font;
+    margin-bottom: $gap-small;
+    font-weight: 700;
+  }
+
+  p,
+  li,
+  a {
+    color: $text-color;
+    font-family: $main-font;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: $gap-small;
+
+      a {
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $secondary-accent;
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    a {
+      margin-right: $gap-small;
+      font-size: 2rem;
+      transition: transform $transition-smooth;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $accent-color;
+      }
+    }
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    @media (max-width:480px) {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    &:hover {
+      background-color: $secondary-accent;
+      transform: scale(1.05);
+      color: $accent-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
+    }
+  }
+
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: $gap-small;
+  }
+
+  .TBC-logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+  }
+
+  input {
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+h1,
+h2 {
+  @include header-font
+}
+
+// responsive
+.container {
+  padding: 0 $container-padding;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    padding: 0 1.5rem;
+  }
+}
+
+.band-members {
+  .member-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap-large;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .member {
+    @media (max-width: 480px) {
+      padding: 1.5rem;
+    }
+  }
+}
+
+.album-card {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+
+    img {
+      display: block !important;
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+.header {
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: $gap-large;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+      gap: $gap-medium;
+    }
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}
+
+.banner {
+  height: 50vh;
+
+  @media (max-width: 768px) {
+    height: 40vh;
+  }
+
+  .banner-content {
+    h1 {
+      font-size: 3rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.music-merch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// FOOTER
+.footer {
+    background: $card-bg;
+    color: $text-color;
+    padding: $gap-large;
+    font-size: 0.9rem;
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        gap: 5rem;
+    }
+
+    h3 {
+        color: $accent-color;
+        font-family: $main-font;
+        margin-bottom: $gap-small;
+        font-weight: 700;
+    }
+
+    p,
+    li,
+    a {
+        color: $text-color;
+        font-family: $main-font;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: $gap-small;
+
+            a {
+                transition: color $transition-fast;
+
+                &:hover {
+                    color: $secondary-accent;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        a {
+            margin-right: $gap-small;
+            font-size: 2rem;
+            transition: transform $transition-smooth;
+
+            &:hover {
+                transform: scale(1.2);
+                color: $accent-color;
+            }
+        }
+    }
+
+    .button {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        background-color: $accent-color;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 115px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $secondary-accent;
+            transform: scale(1.05);
+            color: $accent-color;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
+        }
+    }
+
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: $gap-small;
+    }
+
+    .TBC-logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 1rem;
+    }
+
+    input {
+        width: 115px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+
+        @media (max-width: 480px) {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
+
+h1,
+h2 {
+    @include header-font
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0;
+
+    ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+
+      li {
+        a {
+          font-size: 1rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+
+    .header-logo {
+      width: 80px;
+      height: auto;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 0;
+
+    ul {
+      flex-direction: column;
+      gap: 0.6rem;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .header-logo {
+      width: 70px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-newsletter {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-newsletter form {
+      flex-direction: column;
+      align-items: center;
+
+      input,
+      .button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .TBC-logo {
+      width: 40px;
+      height: 40px;
+      margin: 1rem auto;
+    }
+
+    .footer-bottom {
+      font-size: 0.85rem;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-newsletter {
+      width: 100%;
+    }
+
+    .footer-links ul,
+    .footer-links li,
+    .footer-links a {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-newsletter form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input,
+      .button {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 0.4rem;
+    }
+
+    .footer-bottom {
+      font-size: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .TBC-logo {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

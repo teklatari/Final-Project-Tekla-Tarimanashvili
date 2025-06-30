@@ -1,0 +1,443 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "pressio";
+  color: #ff0055;
+}
+
+a {
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: 0.4s ease;
+}
+a:hover {
+  color: #ff0055;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+main {
+  flex: 1;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+nav {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+}
+nav ul li a {
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif !important;
+}
+nav ul li a .header-logo {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  align-items: center;
+}
+nav ul li a .header-logo:hover {
+  color: #ffffff;
+}
+
+.contact-page {
+  padding: 2rem;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact-page .contact-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-page .contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact-page .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  line-height: 2rem;
+}
+.contact-page .contact-info .contact-details h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact-page .contact-info .contact-details p,
+.contact-page .contact-info .contact-details a {
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif !important;
+}
+.contact-page .contact-info .contact-form {
+  flex: 1 1 50%;
+}
+.contact-page .contact-info .contact-form h2 {
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.contact-page .contact-info .contact-form input,
+.contact-page .contact-info .contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.contact-page .contact-info .contact-form .button {
+  background-color: #222;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  transition: 0.3s;
+}
+.contact-page .contact-info .contact-form .button:hover {
+  background-color: #f92dcd;
+}
+.contact-page .contact-info .social-icons a {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+  transition: 0.3s;
+}
+.contact-page .contact-info .social-icons a:hover {
+  color: #ff0055;
+}
+
+.footer {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+@media (max-width: 480px) {
+  .footer {
+    justify-items: stretch;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 4rem;
+  }
+}
+.footer .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  gap: 5rem;
+}
+.footer h3 {
+  color: #ff0055;
+  font-family: "Montserrat", sans-serif !important;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.footer p,
+.footer li,
+.footer a {
+  color: #f0f0f0;
+  font-family: "Montserrat", sans-serif !important;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+.footer ul li a {
+  transition: color 0.2s ease;
+}
+.footer ul li a:hover {
+  color: #ffffff;
+}
+.footer .social-icons a {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  transition: transform 0.4s ease;
+}
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #ff0055;
+}
+.footer .button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  .footer .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.footer .button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  color: #ff0055;
+}
+.footer .button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3);
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.5rem;
+}
+.footer .TBC-logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+}
+.footer input {
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  .footer input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+h1,
+h2 {
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+  nav .header-logo {
+    width: 80px;
+    height: auto;
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  nav .header-logo {
+    width: 70px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer .footer-links,
+  .footer .footer-social,
+  .footer .footer-newsletter {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .footer-newsletter form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-newsletter form input,
+  .footer .footer-newsletter form .button {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+  }
+  .footer .TBC-logo {
+    width: 40px;
+    height: 40px;
+    margin: 1rem auto;
+  }
+  .footer .footer-bottom {
+    font-size: 0.85rem;
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+  }
+  .footer .footer-links,
+  .footer .footer-social,
+  .footer .footer-newsletter {
+    width: 100%;
+  }
+  .footer .footer-links ul,
+  .footer .footer-links li,
+  .footer .footer-links a {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .footer .footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-newsletter form input,
+  .footer .footer-newsletter form .button {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .footer .social-icons a {
+    font-size: 1.8rem;
+    margin: 0 0.4rem;
+  }
+  .footer .footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 2rem;
+  }
+  .footer .TBC-logo {
+    width: 35px;
+    height: 35px;
+  }
+}

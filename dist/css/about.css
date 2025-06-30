@@ -1,0 +1,905 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: black;
+  font-family: "Montserrat", sans-serif !important;
+  color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: 0.4s ease;
+}
+a:hover {
+  color: #ff0055;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "pressio";
+  color: #ff0055;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+.header ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .header ul {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .header ul {
+    display: none;
+  }
+}
+.header li a {
+  font-weight: 500;
+}
+.header .header-logo {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  ul {
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  ul {
+    display: none;
+  }
+}
+.about .section {
+  padding: 2rem 0;
+  text-align: center;
+}
+.about .section h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.about .section p {
+  margin-bottom: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.intro {
+  margin: 1rem 0rem;
+}
+.intro .container {
+  text-align: center;
+}
+.intro .container h2 {
+  font-size: 2rem;
+  font-family: "pressio";
+  margin-top: 2.5rem;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+@media (max-width: 480px) {
+  .intro .container h2 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+}
+.intro .container .text-intro-p {
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif !important;
+  color: rgb(166, 166, 166);
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
+  line-height: 1.4rem;
+}
+@media (max-width: 480px) {
+  .intro .container .text-intro-p {
+    font-size: 1rem;
+    margin-top: 4px;
+    padding: 0 1rem;
+  }
+}
+
+.band-members {
+  padding: 2rem 0;
+  text-align: center;
+}
+.band-members h2 {
+  font-family: "pressio";
+  font-size: 2.5rem;
+  color: #ff0055;
+  margin-bottom: 2rem;
+}
+.band-members .member-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: stretch;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 4rem;
+}
+@media (max-width: 768px) {
+  .band-members .member-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .band-members .member-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.band-members .member {
+  background-color: #1a1a1a;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 85, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: none;
+}
+@media (max-width: 480px) {
+  .band-members .member {
+    padding: 1.5rem;
+  }
+}
+.band-members .member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255, 0, 85, 0.3);
+}
+.band-members .member img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  height: 370px;
+}
+.band-members .member h3 {
+  font-size: 1.3rem;
+  font-family: "pressio";
+  color: #ff0055;
+  margin-bottom: 0.4rem;
+}
+.band-members .member p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.albums {
+  padding: 4rem 1rem;
+  background: #0d0d0d;
+}
+.albums h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-family: "pressio";
+  color: #ff0055;
+}
+.albums .album-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.albums .album-card {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+  transition: 0.4s ease;
+}
+@media (min-width: 768px) {
+  .albums .album-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.albums .album-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 300px;
+}
+@media (max-width: 768px) {
+  .albums .album-card img {
+    display: none;
+  }
+}
+.albums .album-card .album-info {
+  padding: 2rem;
+}
+.albums .album-card .album-info h3 {
+  font-family: "pressio";
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #ff0055;
+}
+.albums .album-card .album-info h3 .year {
+  font-size: 0.9rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+.albums .album-card .album-info .tags {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif !important;
+}
+.albums .album-card .album-info .description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.2;
+}
+.albums .album-card .album-info .album-actions {
+  display: flex;
+  gap: 1rem;
+}
+.albums .album-card .album-info .album-actions .button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #ff0055;
+  color: white;
+  transition: 0.3s;
+  font-family: "Montserrat", sans-serif !important;
+}
+.albums .album-card .album-info .album-actions .button:hover {
+  background-color: #ffffff;
+  color: #ff0055;
+}
+.albums .album-card .album-info .album-actions .button.ghost {
+  background: transparent;
+  border: 1px solid #ff0055;
+  color: #ff0055;
+}
+.albums .album-card .album-info .album-actions .button.ghost:hover {
+  background: #ff0055;
+  color: white;
+}
+
+.music-merch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 2rem;
+}
+@media (max-width: 768px) {
+  .music-merch {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
+.music-merch .track-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #f0f0f0;
+}
+.music-merch .track-card h3 {
+  font-family: "pressio";
+  color: #ff0055;
+  margin-bottom: 0.5rem;
+}
+.music-merch .track-card p {
+  font-family: "Montserrat", sans-serif !important;
+  margin-bottom: 1rem;
+}
+.music-merch .track-card .merch-tie img {
+  width: 80%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.music-merch .track-card .merch-tie a.button {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.about-banner {
+  position: relative;
+  height: 50vh;
+  background: url("../../images/IMG_1180.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 3.5rem;
+}
+.about-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.about-banner .banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .about-banner .banner-content {
+    font-size: 1rem;
+  }
+}
+.about-banner .banner-content h1 {
+  font-size: 3rem;
+  animation: fadeUp 1.2s ease-out forwards;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .about-banner .banner-content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.1rem;
+  }
+}
+@media (max-width: 480px) {
+  .about-banner .banner-content h1 {
+    font-size: 1.8rem;
+  }
+}
+.about-banner .banner-content p {
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif !important;
+  color: white;
+  margin-bottom: 2rem;
+  animation: fadeUp 1.5s ease-out forwards;
+}
+@media (max-width: 768px) {
+  .about-banner .banner-content p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .about-banner .banner-content p {
+    font-size: 0.9rem;
+  }
+}
+
+.footer {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+.footer .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  gap: 5rem;
+}
+@media (max-width: 480px) {
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.footer h3 {
+  color: #ff0055;
+  font-family: "Montserrat", sans-serif !important;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.footer p,
+.footer li,
+.footer a {
+  color: #f0f0f0;
+  font-family: "Montserrat", sans-serif !important;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+.footer ul li a {
+  transition: color 0.2s ease;
+}
+.footer ul li a:hover {
+  color: #ffffff;
+}
+.footer .social-icons a {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  transition: transform 0.4s ease;
+}
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #ff0055;
+}
+.footer .button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  .footer .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.footer .button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  color: #ff0055;
+}
+.footer .button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3);
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.5rem;
+}
+.footer .TBC-logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+}
+.footer input {
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  .footer input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+h1,
+h2 {
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.band-members .member-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1024px) {
+  .band-members .member-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .band-members .member-cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .band-members .member {
+    padding: 1.5rem;
+  }
+}
+
+.album-card {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1024px) {
+  .album-card {
+    flex-direction: column;
+  }
+  .album-card img {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.header ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .header ul {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .header ul {
+    display: none;
+  }
+}
+
+.banner {
+  height: 50vh;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 40vh;
+  }
+}
+.banner .banner-content h1 {
+  font-size: 3rem;
+}
+@media (max-width: 768px) {
+  .banner .banner-content h1 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .banner .banner-content h1 {
+    font-size: 1.8rem;
+  }
+}
+.banner .banner-content p {
+  font-size: 1.25rem;
+}
+@media (max-width: 768px) {
+  .banner .banner-content p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .banner .banner-content p {
+    font-size: 0.9rem;
+  }
+}
+
+.music-merch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .music-merch {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+.footer .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  gap: 5rem;
+}
+.footer h3 {
+  color: #ff0055;
+  font-family: "Montserrat", sans-serif !important;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.footer p,
+.footer li,
+.footer a {
+  color: #f0f0f0;
+  font-family: "Montserrat", sans-serif !important;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+.footer ul li a {
+  transition: color 0.2s ease;
+}
+.footer ul li a:hover {
+  color: #ffffff;
+}
+.footer .social-icons a {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  transition: transform 0.4s ease;
+}
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #ff0055;
+}
+.footer .button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+.footer .button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  color: #ff0055;
+}
+.footer .button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3);
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.5rem;
+}
+.footer .TBC-logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+}
+.footer input {
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  .footer input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+h1,
+h2 {
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+  nav .header-logo {
+    width: 80px;
+    height: auto;
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  nav .header-logo {
+    width: 70px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer .footer-links,
+  .footer .footer-social,
+  .footer .footer-newsletter {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .footer-newsletter form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-newsletter form input,
+  .footer .footer-newsletter form .button {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+  }
+  .footer .TBC-logo {
+    width: 40px;
+    height: 40px;
+    margin: 1rem auto;
+  }
+  .footer .footer-bottom {
+    font-size: 0.85rem;
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+  }
+  .footer .footer-links,
+  .footer .footer-social,
+  .footer .footer-newsletter {
+    width: 100%;
+  }
+  .footer .footer-links ul,
+  .footer .footer-links li,
+  .footer .footer-links a {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .footer .footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-newsletter form input,
+  .footer .footer-newsletter form .button {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .footer .social-icons a {
+    font-size: 1.8rem;
+    margin: 0 0.4rem;
+  }
+  .footer .footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 2rem;
+  }
+  .footer .TBC-logo {
+    width: 35px;
+    height: 35px;
+  }
+}

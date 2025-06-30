@@ -1,0 +1,373 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+// BASE STYLES
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    background-color: black;
+}
+
+// TYPOGRAPHY
+h1,
+h2,
+h3,
+h4 {
+    font-family: $headline-font;
+    color: $accent-color;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+    transition: $transition-smooth;
+
+    &:hover {
+        color: $accent-color;
+    }
+}
+
+// LAYOUT HELPERS
+.container {
+    max-width: $max-width;
+    padding: 0 $container-padding;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+}
+
+.section {
+    padding: $gap-large 0;
+}
+
+// NAVBAR
+nav {
+    background-color: $card-bg;
+    padding: $gap-medium 0;
+    position: sticky;
+    top: 0;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        gap: $gap-large;
+        align-items: center;
+
+        li {
+            a {
+                font-weight: 500;
+                font-family: $main-font;
+
+                .header-logo {
+                    width: 100px;
+                    height: 30px;
+                    margin-left: 20px;
+                    align-items: center;
+
+                    &:hover {
+                        color: $secondary-accent;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// FOOTER
+.footer {
+    background: $card-bg;
+    color: $text-color;
+    padding: $gap-large;
+    font-size: 0.9rem;
+    @media (max-width: 480px) {
+        justify-items: stretch;
+    max-width: 100%; 
+    width: 100%;
+    padding: 0 4rem;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        gap: 5rem;
+    }
+
+    h3 {
+        color: $accent-color;
+        font-family: $main-font;
+        margin-bottom: $gap-small;
+        font-weight: 700;
+    }
+
+    p,
+    li,
+    a {
+        color: $text-color;
+        font-family: $main-font;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: $gap-small;
+
+            a {
+                transition: color $transition-fast;
+
+                &:hover {
+                    color: $secondary-accent;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        a {
+            margin-right: $gap-small;
+            font-size: 2rem;
+            transition: transform $transition-smooth;
+
+            &:hover {
+                transform: scale(1.2);
+                color: $accent-color;
+            }
+        }
+    }
+
+    .button {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        background-color: $accent-color;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 115px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+
+        @media (max-width:480px) {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        &:hover {
+            background-color: $secondary-accent;
+            transform: scale(1.05);
+            color: $accent-color;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
+        }
+    }
+
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: $gap-small;
+    }
+
+    .TBC-logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 1rem;
+    }
+
+    input {
+        width: 115px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+
+        @media (max-width: 480px) {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
+
+h1,
+h2 {
+    @include header-font
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0;
+
+    ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+
+      li {
+        a {
+          font-size: 1rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+
+    .header-logo {
+      width: 80px;
+      height: auto;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 0;
+
+    ul {
+      flex-direction: column;
+      gap: 0.6rem;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .header-logo {
+      width: 70px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-newsletter {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-newsletter form {
+      flex-direction: column;
+      align-items: center;
+
+      input,
+      .button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .TBC-logo {
+      width: 40px;
+      height: 40px;
+      margin: 1rem auto;
+    }
+
+    .footer-bottom {
+      font-size: 0.85rem;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-newsletter {
+      width: 100%;
+    }
+
+    .footer-links ul,
+    .footer-links li,
+    .footer-links a {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-newsletter form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input,
+      .button {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 0.4rem;
+    }
+
+    .footer-bottom {
+      font-size: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .TBC-logo {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
