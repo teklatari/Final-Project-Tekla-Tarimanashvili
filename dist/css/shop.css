@@ -60,7 +60,7 @@ body,
 html {
   scroll-behavior: smooth;
   height: 100%;
-  background-color: black;
+  background-color: #1a1a1a;
 }
 
 h1,
@@ -121,11 +121,127 @@ nav ul li a .header-logo:hover {
   color: #ffffff;
 }
 
+.shop {
+  background: linear-gradient(135deg, #ff0055, #89A4BB, #24243e);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.shop h1 {
+  font-family: "pressio";
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.shop p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1.1rem;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .shop h1 {
+    font-size: 1.8rem;
+  }
+  .shop p {
+    font-size: 1rem;
+  }
+}
+
+.album-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.album-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: "pressio";
+  color: #89A4BB;
+}
+.album-section .tagline {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1rem;
+  color: white;
+}
+
+.merch-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem;
+  padding: 0 2rem;
+  align-items: center;
+}
+.merch-grid .merch-card {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  max-width: 1100px;
+}
+.merch-grid .merch-card:hover {
+  transform: translateY(-5px);
+}
+.merch-grid .merch-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  height: 350px;
+  object-fit: cover;
+}
+.merch-grid .merch-card h3 {
+  font-family: "pressio";
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+.merch-grid .merch-card .tagline {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 0.9rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.merch-grid .merch-card .album-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #ff0055;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.merch-grid .merch-card .btn {
+  background: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif !important;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.merch-grid .merch-card .btn:hover {
+  background: #ffffff;
+  color: #89A4BB;
+}
+
+.hope-merch .merch-card {
+  background: #9ec4e4;
+}
+
+.eight-merch .merch-card {
+  background: #c7a0ed;
+}
+
 .footer {
   background: #1a1a1a;
   color: #f0f0f0;
   padding: 2rem;
   font-size: 0.9rem;
+  margin: 3.5rem 0 0 0;
 }
 @media (max-width: 480px) {
   .footer {

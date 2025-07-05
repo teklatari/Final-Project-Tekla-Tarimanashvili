@@ -87,6 +87,191 @@ nav {
     }
 }
 
+// concerts
+
+.concerts-header {
+    background: linear-gradient(135deg, #111, #333);
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+
+    h1 {
+        font-family: $headline-font;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-family: $main-font;
+        font-size: 1.1rem;
+        color: lighten(white, 20%);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.concert-news {
+    padding: 4rem 2rem;
+
+    h2 {
+        font-size: 2rem;
+        font-family: $headline-font;
+        color: $third-accent;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .night-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        img {
+            display: block;
+            border-radius: 5px;
+            object-fit: cover;
+            height: 350px;
+            max-width: 100%;
+            width: 445px;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+
+            div img {
+                width: 90% !important;
+                height: auto !important;
+            }
+        }
+    }
+
+}
+
+
+.concert-card {
+    background: $card-bg;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    h3 {
+        font-family: $headline-font;
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-family: $main-font;
+        font-size: 1rem;
+        color: lighten($text-color, 15%);
+        margin: 2rem 0
+    }
+
+    .setlist {
+        list-style: none;
+        padding-left: 0;
+        font-family: $main-font;
+
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+
+.inspirations {
+  padding: 4rem 2rem;
+  background: #1c1c1c;
+  color: white;
+
+  h2 {
+    font-size: 2rem;
+    font-family: $headline-font;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $third-accent;
+  }
+
+  .inspo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+.inspo-card {
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  align-items: end;
+  width: 100%;
+max-width: 100%;
+min-height: 350px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .inspo-img {
+    flex: 1;
+
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+  }
+
+  .inspo-text {
+    flex: 2;
+
+    h4 {
+      font-family: $headline-font;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .short {
+      font-weight: bold;
+      font-size: 1rem;
+      color: $accent-color;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail {
+      font-size: 0.95rem;
+      font-family: $main-font;
+      color: lighten(white, 15%);
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .inspo-img img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+
 
 
 // FOOTER
@@ -95,11 +280,12 @@ nav {
     color: $text-color;
     padding: $gap-large;
     font-size: 0.9rem;
+
     @media (max-width: 480px) {
         justify-items: stretch;
-    max-width: 100%; 
-    width: 100%;
-    padding: 0 4rem;
+        max-width: 100%;
+        width: 100%;
+        padding: 0 4rem;
     }
 
     .footer-container {
@@ -219,155 +405,309 @@ h2 {
 
 
 @media (max-width: 768px) {
-  nav {
-    padding: 1rem 0;
+    nav {
+        padding: 1rem 0;
 
-    ul {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      justify-content: center;
-      align-items: center;
-      padding: 0 1rem;
+        ul {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
 
-      li {
-        a {
-          font-size: 1rem;
-          padding: 0.3rem;
+            li {
+                a {
+                    font-size: 1rem;
+                    padding: 0.3rem;
+                }
+            }
         }
-      }
-    }
 
-    .header-logo {
-      width: 80px;
-      height: auto;
-      margin-left: 0;
+        .header-logo {
+            width: 80px;
+            height: auto;
+            margin-left: 0;
+        }
     }
-  }
 }
 
 @media (max-width: 480px) {
-  nav {
-    padding: 0.8rem 0;
+    nav {
+        padding: 0.8rem 0;
 
-    ul {
-      flex-direction: column;
-      gap: 0.6rem;
-      justify-content: center;
-      align-items: center;
+        ul {
+            flex-direction: column;
+            gap: 0.6rem;
+            justify-content: center;
+            align-items: center;
 
-      li {
-        a {
-          font-size: 0.9rem;
+            li {
+                a {
+                    font-size: 0.9rem;
+                }
+            }
         }
-      }
-    }
 
-    .header-logo {
-      width: 70px;
-      height: auto;
-      margin: 0 auto;
+        .header-logo {
+            width: 70px;
+            height: auto;
+            margin: 0 auto;
+        }
     }
-  }
 }
 
 
 @media (max-width: 768px) {
-  .footer {
+    .footer {
+        padding: 2rem 1.5rem;
+        text-align: center;
+
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-links,
+        .footer-social,
+        .footer-newsletter {
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-newsletter form {
+            flex-direction: column;
+            align-items: center;
+
+            input,
+            .button {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .TBC-logo {
+            width: 40px;
+            height: 40px;
+            margin: 1rem auto;
+        }
+
+        .footer-bottom {
+            font-size: 0.85rem;
+            padding-top: 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
+
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links,
+        .footer-social,
+        .footer-newsletter {
+            width: 100%;
+        }
+
+        .footer-links ul,
+        .footer-links li,
+        .footer-links a {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-newsletter form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            input,
+            .button {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .social-icons a {
+            font-size: 1.8rem;
+            margin: 0 0.4rem;
+        }
+
+        .footer-bottom {
+            font-size: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .TBC-logo {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+  .concerts-header {
+    padding: 3rem 1.5rem;
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .concert-news {
     padding: 2rem 1.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .concert-card {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .setlist li {
+      font-size: 0.9rem;
+    }
+  }
+
+  .night-container {
+    flex-direction: column;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  .inspirations {
+    padding: 3rem 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .inspo-card {
+    flex-direction: column;
+    width: 100% !important;
+    height: auto !important;
     text-align: center;
+    padding: 1.5rem;
 
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .footer-links,
-    .footer-social,
-    .footer-newsletter {
-      width: 100%;
-      text-align: center;
-    }
-
-    .footer-newsletter form {
-      flex-direction: column;
-      align-items: center;
-
-      input,
-      .button {
+    .inspo-img {
+      img {
         width: 100%;
-        max-width: 300px;
-        margin-bottom: 0.5rem;
+        max-width: 100%;
+        height: auto;
       }
     }
 
-    .TBC-logo {
-      width: 40px;
-      height: 40px;
-      margin: 1rem auto;
-    }
+    .inspo-text {
+      margin-left: 0;
+      margin-top: 1rem;
 
-    .footer-bottom {
-      font-size: 0.85rem;
-      padding-top: 1rem;
+      h4 {
+        font-size: 1.3rem;
+      }
+
+      .short,
+      .detail {
+        font-size: 0.9rem;
+      }
     }
+  }
+  .inspo-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inspo-img {
+    max-width: 100%;
+    width: 100%;
+
+    img {
+      height: auto;
+      max-height: 300px;
+    }
+  }
+
+  .inspo-text {
+    margin-left: 0;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .footer {
+  .concerts-header {
+    padding: 2.5rem 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .concert-news {
     padding: 2rem 1rem;
-    text-align: center;
+  }
 
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
+  .concert-card {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.2rem;
     }
 
-    .footer-links,
-    .footer-social,
-    .footer-newsletter {
-      width: 100%;
-    }
-
-    .footer-links ul,
-    .footer-links li,
-    .footer-links a {
-      display: block;
-      margin-bottom: 0.4rem;
+    p {
       font-size: 0.9rem;
     }
 
-    .footer-newsletter form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .setlist li {
+      font-size: 0.85rem;
+    }
+  }
 
-      input,
-      .button {
-        width: 100%;
-        max-width: 280px;
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
+  .inspo-card {
+    padding: 1.2rem;
+
+    .inspo-text {
+      h4 {
+        font-size: 1.1rem;
       }
-    }
 
-    .social-icons a {
-      font-size: 1.8rem;
-      margin: 0 0.4rem;
-    }
-
-    .footer-bottom {
-      font-size: 0.75rem;
-      margin-top: 2rem;
-    }
-
-    .TBC-logo {
-      width: 35px;
-      height: 35px;
+      .short,
+      .detail {
+        font-size: 0.85rem;
+      }
     }
   }
 }

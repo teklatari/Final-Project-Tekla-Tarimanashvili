@@ -1,0 +1,220 @@
+.about-hero {
+  padding: 6rem 2rem;
+  color: white;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  color: #ff006e;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.about-hero p strong {
+  color: #89A4BB;
+}
+
+.about-hero p em {
+  font-style: italic;
+  color: #faff00;
+}
+
+.about-hero blockquote {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #faff00;
+  margin-top: 2rem;
+}
+
+.why-site,
+.audience,
+.message {
+  padding: 4rem 2rem;
+  background: #1a1a1a;
+  color: white;
+  margin-bottom: 1rem;
+  
+}
+
+.why-site h2,
+.audience h2,
+.message h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #ff006e;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.why-site p,
+.audience p,
+.message p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.why-site p em,
+.audience p em,
+.message p em {
+  font-style: italic;
+  color: #ff006e; 
+}
+
+.why-site p strong,
+.audience p strong,
+.message p strong {
+  color: #ff006e;
+}
+
+.why-site ul,
+.audience ul,
+.message ul {
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.why-site li,
+.audience li,
+.message li {
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.why-site li strong,
+.audience li strong,
+.message li strong {
+  color: #89A4BB;
+}
+
+.message {
+  background: #111;
+}
+
+.message p {
+  font-size: 1.2rem;
+}
+
+.message p strong {
+  font-size: 1.4rem;
+  color: #faff00; 
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .about-hero blockquote {
+    font-size: 1.3rem;
+  }
+
+  .why-site,
+  .audience,
+  .message {
+    padding: 3rem 1.5rem;
+  }
+
+  .why-site h2,
+  .audience h2,
+  .message h2 {
+    font-size: 1.6rem;
+  }
+
+  .why-site p,
+  .audience p,
+  .message p {
+    font-size: 1rem;
+  }
+
+  .why-site ul,
+  .audience ul,
+  .message ul {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-hero p {
+    font-size: 0.95rem;
+  }
+
+  .about-hero blockquote {
+    font-size: 1.1rem;
+  }
+
+  .why-site h2,
+  .audience h2,
+  .message h2 {
+    font-size: 1.4rem;
+  }
+
+  .why-site p,
+  .audience p,
+  .message p,
+  .why-site ul,
+  .audience ul,
+  .message ul {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+.btn {
+  color: white;
+  font-family: "Pressio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #ff006e;
+  border: 2px solid #ff006e;
+  transform: scale(1.05);
+  background-color: white;
+  padding: 1px;
+}

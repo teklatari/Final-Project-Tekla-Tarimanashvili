@@ -6,16 +6,16 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body,
 html {
-    scroll-behavior: smooth;
-    height: 100%;
-    background-color: black;
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: red;
 }
 
 // TYPOGRAPHY
@@ -23,68 +23,205 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: $headline-font;
-    color: $accent-color;
+  font-family: $headline-font;
+  color: $accent-color;
 }
 
 a {
-    text-decoration: none;
-    color: $text-color;
-    transition: $transition-smooth;
+  text-decoration: none;
+  color: $text-color;
+  transition: $transition-smooth;
 
-    &:hover {
-        color: $accent-color;
-    }
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 // LAYOUT HELPERS
 .container {
-    max-width: $max-width;
-    padding: 0 $container-padding;
-    margin: 0 auto;
+  max-width: $max-width;
+  padding: 0 $container-padding;
+  margin: 0 auto;
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
 
 .section {
-    padding: $gap-large 0;
+  padding: $gap-large 0;
 }
 
 // NAVBAR
 nav {
-    background-color: $card-bg;
-    padding: $gap-medium 0;
-    position: sticky;
-    top: 0;
+  background-color: $card-bg;
+  padding: $gap-medium 0;
+  position: sticky;
+  top: 0;
 
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: flex-start;
-        gap: $gap-large;
-        align-items: center;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: $gap-large;
+    align-items: center;
 
-        li {
-            a {
-                font-weight: 500;
-                font-family: $main-font;
+    li {
+      a {
+        font-weight: 500;
+        font-family: $main-font;
 
-                .header-logo {
-                    width: 100px;
-                    height: 30px;
-                    margin-left: 20px;
-                    align-items: center;
+        .header-logo {
+          width: 100px;
+          height: 30px;
+          margin-left: 20px;
+          align-items: center;
 
-                    &:hover {
-                        color: $secondary-accent;
-                    }
-                }
-            }
-
+          &:hover {
+            color: $secondary-accent;
+          }
         }
+      }
+
     }
+  }
+}
+
+.shop {
+  background: linear-gradient(135deg, $accent-color, #89A4BB, #24243e);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  h1 {
+    font-family: $headline-font;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  p {
+    font-family: $main-font;
+    font-size: 1.1rem;
+    color: lighten(white, 20%);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// album section
+.album-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: $headline-font;
+    color: $third-accent;
+  }
+
+  .tagline {
+    font-family: $main-font;
+    font-size: 1rem;
+    color: lighten($text-color, 25%);
+  }
+}
+
+// product grid
+.merch-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem;
+  padding: 0 2rem;
+  align-items: center;
+
+  .merch-card {
+    background-color: $card-bg;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    max-width: 1100px;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    h3 {
+      font-family: $headline-font;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: black;
+    }
+
+    .tagline {
+      font-family: $main-font;
+      font-size: 0.9rem;
+      color: lighten($text-color, 20%);
+      margin-bottom: 0.5rem;
+    }
+
+    .album-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: $accent-color;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background: none;
+      color: white;
+      padding: 0.1rem 1rem;
+      border-radius: 25px;
+      font-family: $main-font;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 2rem;
+      font-size: 13px;
+
+      &:hover {
+        background: $secondary-accent;
+        color: $third-accent;
+        margin: 2rem;
+      }
+    }
+  }
+}
+
+// styles
+.hope-merch {
+  .merch-card {
+  background: #9ec4e4;
+}
+}
+
+.eight-merch .merch-card {
+  background: #c7a0ed;
 }
 
 
@@ -94,130 +231,132 @@ nav {
 
 // FOOTER
 .footer {
-    background: $card-bg;
-    color: $text-color;
-    padding: $gap-large;
-    font-size: 0.9rem;
-    @media (max-width: 480px) {
-        justify-items: stretch;
-    max-width: 100%; 
+  background: $card-bg;
+  color: $text-color;
+  padding: $gap-large;
+  font-size: 0.9rem;
+  margin: 3.5rem 0 0 0;
+
+  @media (max-width: 480px) {
+    justify-items: stretch;
+    max-width: 100%;
     width: 100%;
     padding: 0 4rem;
-    }
+  }
 
-    .footer-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center !important;
-        gap: 5rem;
-    }
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 5rem;
+  }
 
-    h3 {
-        color: $accent-color;
-        font-family: $main-font;
-        margin-bottom: $gap-small;
-        font-weight: 700;
-    }
+  h3 {
+    color: $accent-color;
+    font-family: $main-font;
+    margin-bottom: $gap-small;
+    font-weight: 700;
+  }
 
-    p,
-    li,
-    a {
-        color: $text-color;
-        font-family: $main-font;
-    }
+  p,
+  li,
+  a {
+    color: $text-color;
+    font-family: $main-font;
+  }
 
-    ul {
-        list-style: none;
-        padding: 0;
+  ul {
+    list-style: none;
+    padding: 0;
 
-        li {
-            margin-bottom: $gap-small;
+    li {
+      margin-bottom: $gap-small;
 
-            a {
-                transition: color $transition-fast;
-
-                &:hover {
-                    color: $secondary-accent;
-                }
-            }
-        }
-    }
-
-    .social-icons {
-        a {
-            margin-right: $gap-small;
-            font-size: 2rem;
-            transition: transform $transition-smooth;
-
-            &:hover {
-                transform: scale(1.2);
-                color: $accent-color;
-            }
-        }
-    }
-
-    .button {
-        display: inline-block;
-        padding: 0.5rem 1.5rem;
-        font-size: 1rem;
-        background-color: $accent-color;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: 115px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 5px;
-
-        @media (max-width:480px) {
-            width: 100%;
-            max-width: 300px;
-        }
+      a {
+        transition: color $transition-fast;
 
         &:hover {
-            background-color: $secondary-accent;
-            transform: scale(1.05);
-            color: $accent-color;
+          color: $secondary-accent;
         }
+      }
+    }
+  }
 
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
-        }
+  .social-icons {
+    a {
+      margin-right: $gap-small;
+      font-size: 2rem;
+      transition: transform $transition-smooth;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $accent-color;
+      }
+    }
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    @media (max-width:480px) {
+      width: 100%;
+      max-width: 300px;
     }
 
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 4rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: $gap-small;
+    &:hover {
+      background-color: $secondary-accent;
+      transform: scale(1.05);
+      color: $accent-color;
     }
 
-    .TBC-logo {
-        width: 50px;
-        height: 50px;
-        margin-left: 1rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
     }
+  }
 
-    input {
-        width: 115px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 5px;
 
-        @media (max-width: 480px) {
-            width: 100%;
-            max-width: 300px;
-        }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: $gap-small;
+  }
+
+  .TBC-logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+  }
+
+  input {
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      max-width: 300px;
     }
+  }
 }
 
 h1,
 h2 {
-    @include header-font
+  @include header-font
 }
 
 @media (max-width: 768px) {
@@ -372,3 +511,6 @@ h2 {
     }
   }
 }
+
+
+

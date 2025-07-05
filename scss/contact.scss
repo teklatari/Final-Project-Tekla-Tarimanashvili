@@ -110,7 +110,7 @@ nav {
     line-height: 2rem;
 
     .contact-details {
-
+ß
       h2 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
@@ -156,7 +156,7 @@ nav {
         transition: 0.3s;
 
         &:hover {
-          background-color: #f92dcd;
+          background-color: $accent-color;
         }
       }
     }
@@ -175,6 +175,79 @@ nav {
     }
   }
 }
+
+// banner
+.about-banner {
+  position: relative;
+  height: 50vh;
+  background: url('../../images/IMG_1180.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 3.5rem;
+  @media (max-width: 768px) {
+        height: 40vh;
+      }
+
+      @media (max-width: 480px) {
+        height: 25vh;
+      }
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: fadeUp 1.2s ease-out forwards;
+      @include header-font;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.3rem;
+        margin-bottom: 0.1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-family: $main-font;
+      color: lighten($text-color, 20%);
+      margin-bottom: 2rem;
+      animation: fadeUp 1.5s ease-out forwards;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
 
 
 

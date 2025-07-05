@@ -139,6 +139,18 @@ h4 {
   margin-bottom: 1rem;
   font-size: 2.5rem;
 }
+@media (max-width: 768px) {
+  .about .section h1 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .about .section h1 {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+}
 .about .section p {
   margin-bottom: 1rem;
   max-width: 700px;
@@ -146,6 +158,19 @@ h4 {
   margin-right: auto;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .about .section p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .about .section p {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    padding: 0 1rem;
+  }
 }
 
 .intro {
@@ -240,6 +265,16 @@ h4 {
   margin-bottom: 0.5rem;
   object-fit: cover;
   height: 370px;
+}
+@media (max-width: 768px) {
+  .band-members .member img {
+    height: 340px;
+  }
+}
+@media (max-width: 480px) {
+  .band-members .member img {
+    height: 300px;
+  }
 }
 .band-members .member h3 {
   font-size: 1.3rem;
@@ -399,6 +434,16 @@ h4 {
   text-align: center;
   color: white;
   margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+  .about-banner {
+    height: 40vh;
+  }
+}
+@media (max-width: 480px) {
+  .about-banner {
+    height: 25vh;
+  }
 }
 .about-banner::after {
   content: "";
@@ -567,114 +612,6 @@ h2 {
   font-family: "Pressio", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.container {
-  padding: 0 2rem;
-  margin: 0 auto;
-}
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-}
-
-.band-members .member-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 1024px) {
-  .band-members .member-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .band-members .member-cards {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 480px) {
-  .band-members .member {
-    padding: 1.5rem;
-  }
-}
-
-.album-card {
-  display: flex;
-  flex-direction: row;
-}
-@media (max-width: 1024px) {
-  .album-card {
-    flex-direction: column;
-  }
-  .album-card img {
-    display: block !important;
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.header ul {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2rem;
-}
-@media (max-width: 768px) {
-  .header ul {
-    justify-content: center;
-    gap: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .header ul {
-    display: none;
-  }
-}
-
-.banner {
-  height: 50vh;
-}
-@media (max-width: 768px) {
-  .banner {
-    height: 40vh;
-  }
-}
-.banner .banner-content h1 {
-  font-size: 3rem;
-}
-@media (max-width: 768px) {
-  .banner .banner-content h1 {
-    font-size: 2.2rem;
-  }
-}
-@media (max-width: 480px) {
-  .banner .banner-content h1 {
-    font-size: 1.8rem;
-  }
-}
-.banner .banner-content p {
-  font-size: 1.25rem;
-}
-@media (max-width: 768px) {
-  .banner .banner-content p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .banner .banner-content p {
-    font-size: 0.9rem;
-  }
-}
-
-.music-merch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-@media (max-width: 768px) {
-  .music-merch {
-    grid-template-columns: 1fr;
-  }
 }
 
 .footer {

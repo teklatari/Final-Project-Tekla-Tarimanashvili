@@ -93,8 +93,20 @@ h4 {
     display: none;
   }
 }
+#carouselExampleRide {
+  .carousel-item {
+    height: $carousel-img-height;
 
-// ABOUT SECTION
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+// about
 .about {
   .section {
     padding: $gap-large 0;
@@ -103,6 +115,16 @@ h4 {
     h1 {
       margin-bottom: $gap-medium;
       font-size: 2.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+      }
     }
 
     p {
@@ -112,47 +134,59 @@ h4 {
       margin-right: auto;
       font-size: 1.1rem;
       line-height: 1.6;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        padding: 0 1rem;
+      }
     }
   }
 }
 
 // text-intro
 .intro {
-    margin: 1rem 0rem;
+  margin: 1rem 0rem;
 
-    .container {
-        text-align: center;
+  .container {
+    text-align: center;
 
-        h2 {
-            font-size: 2rem;
-            font-family: $headline-font;
-            margin-top: 2.5rem;
-            @include header-font;
-            margin-bottom: 1rem;
+    h2 {
+      margin-top: 6rem;
+      font-size: 2rem;
+      font-family: $headline-font;
+      margin-top: 2.5rem;
+      @include header-font;
+      margin-bottom: 1rem;
 
-            @media (max-width: 480px) {
-                font-size: 1.6rem;
-                margin-top: 1rem;
-            }
-        }
-
-        .text-intro-p {
-            font-size: 1.25rem;
-            font-family: $main-font;
-            color: rgb(166, 166, 166);
-            margin-bottom: 2rem;
-            text-align: center;
-            line-height: 1.2;
-            letter-spacing: 0.2rem;
-            line-height: 1.4rem;
-
-            @media (max-width: 480px) {
-                font-size: 1rem;
-                margin-top: 4px;
-                padding: 0 1rem;
-            }
-        }
+      @media (max-width: 480px) {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+      }
     }
+
+    .text-intro-p {
+      font-size: 1.25rem;
+      font-family: $main-font;
+      color: rgb(166, 166, 166);
+      margin-bottom: 2rem;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 0.2rem;
+      line-height: 1.4rem;
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+        margin-top: 4px;
+        padding: 0 1rem;
+      }
+    }
+  }
 }
 
 // members
@@ -172,7 +206,7 @@ h4 {
     grid-template-columns: repeat(3, 1fr);
     gap: $gap-large;
     justify-items: stretch;
-    max-width: 100%; 
+    max-width: 100%;
     width: 100%;
     padding: 0 4rem;
 
@@ -210,6 +244,14 @@ h4 {
       margin-bottom: $gap-small;
       object-fit: cover;
       height: 370px;
+
+      @media (max-width: 768px) {
+        height: 340px;
+      }
+
+      @media (max-width: 480px) {
+        height: 300px;
+      }
     }
 
     h3 {
@@ -384,69 +426,7 @@ h4 {
   }
 }
 
-// banner
-.about-banner {
-  position: relative;
-  height: 50vh;
-  background: url('../../images/IMG_1180.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  margin-bottom: 3.5rem;
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-  }
-
-  .banner-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 2rem;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      animation: fadeUp 1.2s ease-out forwards;
-      @include header-font;
-      margin-bottom: 1rem;
-
-      @media (max-width: 768px) {
-        font-size: 2.3rem;
-        margin-bottom: 0.1rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 1.8rem;
-      }
-    }
-
-    p {
-      font-size: 1.25rem;
-      font-family: $main-font;
-      color: lighten($text-color, 20%);
-      margin-bottom: 2rem;
-      animation: fadeUp 1.5s ease-out forwards;
-
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
 
 // FOOTER
 .footer {
@@ -576,230 +556,129 @@ h2 {
   @include header-font
 }
 
-// responsive
-.container {
-  padding: 0 $container-padding;
-  margin: 0 auto;
 
-  @media (max-width: 1024px) {
-    padding: 0 1.5rem;
-  }
-}
 
-.band-members {
-  .member-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $gap-large;
 
-    @media (max-width: 1024px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
 
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .member {
-    @media (max-width: 480px) {
-      padding: 1.5rem;
-    }
-  }
-}
-
-.album-card {
-  display: flex;
-  flex-direction: row;
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-
-    img {
-      display: block !important;
-      width: 100%;
-      max-width: none;
-    }
-  }
-}
-
-.header {
-  ul {
-    display: flex;
-    justify-content: flex-start;
-    gap: $gap-large;
-
-    @media (max-width: 768px) {
-      justify-content: center;
-      gap: $gap-medium;
-    }
-
-    @media (max-width: 480px) {
-      display: none;
-    }
-  }
-}
-
-.banner {
-  height: 50vh;
-
-  @media (max-width: 768px) {
-    height: 40vh;
-  }
-
-  .banner-content {
-    h1 {
-      font-size: 3rem;
-
-      @media (max-width: 768px) {
-        font-size: 2.2rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 1.8rem;
-      }
-    }
-
-    p {
-      font-size: 1.25rem;
-
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-.music-merch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
 
 // FOOTER
 .footer {
-    background: $card-bg;
+  background: $card-bg;
+  color: $text-color;
+  padding: $gap-large;
+  font-size: 0.9rem;
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 5rem;
+  }
+
+  h3 {
+    color: $accent-color;
+    font-family: $main-font;
+    margin-bottom: $gap-small;
+    font-weight: 700;
+  }
+
+  p,
+  li,
+  a {
     color: $text-color;
-    padding: $gap-large;
-    font-size: 0.9rem;
+    font-family: $main-font;
+  }
 
-    .footer-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center !important;
-        gap: 5rem;
-    }
+  ul {
+    list-style: none;
+    padding: 0;
 
-    h3 {
-        color: $accent-color;
-        font-family: $main-font;
-        margin-bottom: $gap-small;
-        font-weight: 700;
-    }
+    li {
+      margin-bottom: $gap-small;
 
-    p,
-    li,
-    a {
-        color: $text-color;
-        font-family: $main-font;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-            margin-bottom: $gap-small;
-
-            a {
-                transition: color $transition-fast;
-
-                &:hover {
-                    color: $secondary-accent;
-                }
-            }
-        }
-    }
-
-    .social-icons {
-        a {
-            margin-right: $gap-small;
-            font-size: 2rem;
-            transition: transform $transition-smooth;
-
-            &:hover {
-                transform: scale(1.2);
-                color: $accent-color;
-            }
-        }
-    }
-
-    .button {
-        display: inline-block;
-        padding: 0.5rem 1.5rem;
-        font-size: 1rem;
-        background-color: $accent-color;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: 115px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 5px;
+      a {
+        transition: color $transition-fast;
 
         &:hover {
-            background-color: $secondary-accent;
-            transform: scale(1.05);
-            color: $accent-color;
+          color: $secondary-accent;
         }
+      }
+    }
+  }
 
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
-        }
+  .social-icons {
+    a {
+      margin-right: $gap-small;
+      font-size: 2rem;
+      transition: transform $transition-smooth;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $accent-color;
+      }
+    }
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $secondary-accent;
+      transform: scale(1.05);
+      color: $accent-color;
     }
 
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 4rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: $gap-small;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 0, 85, 0.3); // Optional focus ring
     }
+  }
 
-    .TBC-logo {
-        width: 50px;
-        height: 50px;
-        margin-left: 1rem;
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: $gap-small;
+  }
+
+  .TBC-logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+  }
+
+  input {
+    width: 115px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      max-width: 300px;
     }
-
-    input {
-        width: 115px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 5px;
-
-        @media (max-width: 480px) {
-            width: 100%;
-            max-width: 300px;
-        }
-    }
+  }
 }
 
 h1,
 h2 {
-    @include header-font
+  @include header-font
 }
 
+// responsive
 @media (max-width: 768px) {
   nav {
     padding: 1rem 0;

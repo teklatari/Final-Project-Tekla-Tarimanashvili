@@ -121,6 +121,166 @@ nav ul li a .header-logo:hover {
   color: #ffffff;
 }
 
+.concerts-header {
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.concerts-header h1 {
+  font-family: "pressio";
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.concerts-header p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1.1rem;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.concert-news {
+  padding: 4rem 2rem;
+}
+.concert-news h2 {
+  font-size: 2rem;
+  font-family: "pressio";
+  color: #89A4BB;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.concert-news .night-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.concert-news .night-container img {
+  display: block;
+  border-radius: 5px;
+  object-fit: cover;
+  height: 350px;
+  max-width: 100%;
+  width: 445px;
+}
+@media (max-width: 768px) {
+  .concert-news .night-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .concert-news .night-container div img {
+    width: 90% !important;
+    height: auto !important;
+  }
+}
+
+.concert-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.concert-card h3 {
+  font-family: "pressio";
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+}
+.concert-card p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1rem;
+  color: white;
+  margin: 2rem 0;
+}
+.concert-card .setlist {
+  list-style: none;
+  padding-left: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+.concert-card .setlist li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inspirations {
+  padding: 4rem 2rem;
+  background: #1c1c1c;
+  color: white;
+}
+.inspirations h2 {
+  font-size: 2rem;
+  font-family: "pressio";
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #89A4BB;
+}
+.inspirations .inspo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.inspo-card {
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  align-items: end;
+  width: 100%;
+  max-width: 100%;
+  min-height: 350px;
+}
+.inspo-card:hover {
+  transform: translateY(-5px);
+}
+.inspo-card .inspo-img {
+  flex: 1;
+}
+.inspo-card .inspo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.inspo-card .inspo-text {
+  flex: 2;
+}
+.inspo-card .inspo-text h4 {
+  font-family: "pressio";
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.inspo-card .inspo-text .short {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ff0055;
+  margin-bottom: 0.5rem;
+}
+.inspo-card .inspo-text .detail {
+  font-size: 0.95rem;
+  font-family: "Montserrat", sans-serif !important;
+  color: white;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .inspo-card {
+    flex-direction: column;
+  }
+  .inspo-card .inspo-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .footer {
   background: #1a1a1a;
   color: #f0f0f0;
@@ -359,5 +519,122 @@ h2 {
   .footer .TBC-logo {
     width: 35px;
     height: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .concerts-header {
+    padding: 3rem 1.5rem;
+  }
+  .concerts-header h1 {
+    font-size: 2.2rem;
+  }
+  .concerts-header p {
+    font-size: 1rem;
+  }
+  .concert-news {
+    padding: 2rem 1.5rem;
+  }
+  .concert-news h2 {
+    font-size: 1.6rem;
+  }
+  .concert-card {
+    padding: 1.5rem;
+  }
+  .concert-card h3 {
+    font-size: 1.4rem;
+  }
+  .concert-card p {
+    font-size: 0.95rem;
+  }
+  .concert-card .setlist li {
+    font-size: 0.9rem;
+  }
+  .night-container {
+    flex-direction: column;
+  }
+  .night-container img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .inspirations {
+    padding: 3rem 1.5rem;
+  }
+  .inspirations h2 {
+    font-size: 1.8rem;
+  }
+  .inspo-card {
+    flex-direction: column;
+    width: 100% !important;
+    height: auto !important;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .inspo-card .inspo-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .inspo-card .inspo-text {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .inspo-card .inspo-text h4 {
+    font-size: 1.3rem;
+  }
+  .inspo-card .inspo-text .short,
+  .inspo-card .inspo-text .detail {
+    font-size: 0.9rem;
+  }
+  .inspo-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .inspo-img {
+    max-width: 100%;
+    width: 100%;
+  }
+  .inspo-img img {
+    height: auto;
+    max-height: 300px;
+  }
+  .inspo-text {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .concerts-header {
+    padding: 2.5rem 1rem;
+  }
+  .concerts-header h1 {
+    font-size: 1.8rem;
+  }
+  .concerts-header p {
+    font-size: 0.95rem;
+  }
+  .concert-news {
+    padding: 2rem 1rem;
+  }
+  .concert-card {
+    padding: 1rem;
+  }
+  .concert-card h3 {
+    font-size: 1.2rem;
+  }
+  .concert-card p {
+    font-size: 0.9rem;
+  }
+  .concert-card .setlist li {
+    font-size: 0.85rem;
+  }
+  .inspo-card {
+    padding: 1.2rem;
+  }
+  .inspo-card .inspo-text h4 {
+    font-size: 1.1rem;
+  }
+  .inspo-card .inspo-text .short,
+  .inspo-card .inspo-text .detail {
+    font-size: 0.85rem;
   }
 }
